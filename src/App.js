@@ -13,7 +13,7 @@ export default function App() {
 
 function Advice() {
   const [advice, setAdvice] = useState("");
-  const [randomInt, setRandomInt] = useState("");
+  const [randomInt, setRandomInt] = useState("72");
 
   async function fetchAdvice() {
     const response = await fetch("https://api.adviceslip.com/advice");
