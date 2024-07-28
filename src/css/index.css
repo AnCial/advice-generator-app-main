@@ -1,0 +1,76 @@
+:root {
+  --primary-color: hsl(193, 38%, 86%);
+  --primary-color-green: hsla(150, 100%, 66%, 0.778);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--dark-blue);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+.container {
+  width: -moz-min-content;
+  width: min-content;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--dark-grayish-blue);
+  position: relative;
+}
+
+.advice {
+  color: var(--primary-color);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+.advice__text span {
+  color: var(--primary-color-green);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 0.8rem;
+}
+.advice__text h2 {
+  color: var(--primary-color-cyan);
+  margin: 2.5rem 0;
+  line-height: 1.5;
+}
+.advice__text img {
+  margin-bottom: 2rem;
+  width: 25rem;
+}
+.advice button {
+  position: absolute;
+  padding: 1rem;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color-green);
+  transition: all 0.5s;
+}
+.advice button img {
+  width: 2rem;
+  height: 2rem;
+}
+.advice button:hover {
+  background-color: hsl(150, 100%, 66%);
+  transition: all 0.5s;
+  box-shadow: 1px 1px 15px hsl(150, 100%, 66%);
+}
