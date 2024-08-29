@@ -13,35 +13,26 @@ export default function App() {
 
 function Advice() {
   const [advice, setAdvice] = useState("");
-  const [randomInt, setRandomInt] = useState("72");
+  const [randomInt, setRandomInt] = useState("");
 
   async function fetchAdvice() {
     const response = await fetch("https://api.adviceslip.com/advice");
     const data = await response.json();
     setAdvice(data.slip.advice);
+    setRandomInt(data.slip.id);
   }
 
   useEffect(() => {
     fetchAdvice();
   }, []);
 
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
   function handleClick() {
-    const random = getRandomInt(1, 217);
-    setRandomInt(random);
     fetchAdvice();
   }
 
   return (
     <div className="advice">
-      <AdviceComponent
-        advice={advice}
-        onGetRandomInt={getRandomInt}
-        randomInt={randomInt}
-      />
+      <AdviceComponent advice={advice} randomInt={randomInt} />
       <Button onHandleClick={handleClick} />
     </div>
   );
